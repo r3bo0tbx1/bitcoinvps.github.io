@@ -341,7 +341,7 @@ function launch_callback(response) {
 
         set_value("launch_button", "Server built.");
         set_contents("info", get_info_html(response));
-        set_contents("output", "<h4>Save this output:</h4><tt>" + json_response + "</tt>")
+        set_contents("output", "<h4>Save this output:</h4><tt><textarea class='form-control'>" + json_response + "</textarea></tt>")
 
     } else if (response["paid"] === true) {
 

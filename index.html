@@ -241,9 +241,11 @@
 </div>
 
 <div class="launch_only">
-<h4>SSH public key (~/.ssh/id_rsa.pub)</h4>
+<h4>SSH public key (~/.ssh/id_rsa.pub): paste or attach</h4>
 <p>
-    <textarea style="width: 100%" id="ssh_key" class="control form-control" placeholder="ssh-rsa..."></textarea>
+    <code><textarea style="width: 100%" id="ssh_key" class="control form-control" placeholder="ssh-rsa..."></textarea></code>
+    <small>If attaching a key, the file's extension <strong>must</strong> be .pub</small>
+    <input class="control form-control-file" type="file" accept=".pub" onchange="key_attach(this.files)">
 </p>
 </div>
 
@@ -262,6 +264,17 @@
 <div id="existing_servers"></div>
 
 <script>
+
+function key_attach(files) {
+    var reader = new FileReader();
+    var element = document.getElementById("ssh_key");
+    reader.onload = function() {
+        element.value = reader.result;
+        element.disabled = true;
+    }
+    reader.readAsText(files[0]);
+}
+
 
 function host_onchange() {
     console.log("changes");

@@ -329,21 +329,32 @@ function renew_wrapper(machine_id) {
 function pay(address, amount) {
     console.log("pay");
 
+    // Satoshis to BSV
     var btc = sb.toBitcoin(amount);
+
+    // Satoshis to BSV, affiliate 1% fee
+    var btc_affiliate = sb.toBitcoin(Math.floor(amount * 0.01));
 
     pay_loop = true;
 
     const payment_element = document.getElementById("payment");
-  moneyButton.render(payment_element, {
-    to: address,
-    amount: btc,
-    currency: "BSV",
-    clientIdentifier: "fbdb1e8ba76b9b0064b89a9c9d34fe86",
-    buttonId: "1560812643219",
-    buttonData: "{}",
-    type: "buy",
-    onPayment: function (arg) { console.log('paid'); var launchbtn = document.getElementById("launch_button"); launchbtn.disabled = false; launchbtn.click(); console.log('more paid') },
-    onError: function (arg) { console.log('onError', arg) }
+    moneyButton.render(payment_element, {
+      outputs: [
+                 { address: "1kiawHJA9ewNWwsi4i9WVEmQpcGKZDG6v",
+                   amount: btc_affiliate,
+                   currency: "BSV"
+                 },
+                 { address: address,
+                   amount: btc,
+                   currency: "BSV"
+                 }
+      ],
+      clientIdentifier: "fbdb1e8ba76b9b0064b89a9c9d34fe86",
+      buttonId: "1560812643219",
+      buttonData: "{}",
+      type: "buy",
+      onPayment: function (arg) { console.log('paid'); var launchbtn = document.getElementById("launch_button"); launchbtn.disabled = false; launchbtn.click(); console.log('more paid') },
+      onError: function (arg) { console.log('onError', arg) }
   })
 }
 
@@ -520,7 +531,14 @@ function try_launch() {
 
 </div>
 
+<br/>
 
+<div class="card card-body">
+    <div id="bitsqus" data-address="1M4sbJFWwZnbbjXkVoxjGj946qCh7kxcb8" data-currency="USD" data-amount="0.08"></div>
+    <script src="https://bico.media/dc20118047fec6f8898fe296c3bc1bd4afb7afdde9249b891c5d178a49124311" integrity="sha384-zE+w9srChcoVpv/tQBC0+4R5kiq6VekrYLp+L2y+eOYWsW5uMw+LV9Gsdi1D1ESq" crossorigin="anonymous"></script>
+</div>
+
+<br/>
 
 <footer>VPS servers hosted with <a href="https://sporestack.com">SporeStack</a>. Head over there if you want to use additional cryptocurrencies, libraries, CLI, etc.</footer>
 

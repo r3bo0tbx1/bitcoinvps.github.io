@@ -161,20 +161,20 @@
 
 <noscript><h2>This needs Javascript to work.</h2></noscript>
 
-<div class="launch_only">
-<h4>Host</h4>
-<p>
+<div class="input-group mb-3 launch_only">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Provider</span>
+    </div>
     <select id="host" class="control form-control" onchange="host_onchange();">
         <option value="auto">Random with capacity</option>
         <option value="digitalocean.sporestack.com">Digital Ocean</option>
     </select>
-</p>
 </div>
 
-<div class="launch_only">
-<h4>Region</h4>
-<h6>(Host must not be random to adjust this.)</h6>
-<p>
+<div class="input-group mb-3 launch_only">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Region (Provider must not be random to adjust this.)</span>
+    </div>
     <select id="region" class="control form-control" disabled>
         <option value="auto">Random with capacity</option>
         <option value="sfo2">San Francisco</option>
@@ -187,12 +187,12 @@
         <option value="sgp1">Singapore</option>
         <option value="blr1">Bangalore</option>
     </select>
-</p>
 </div>
 
-<div class="launch_only">
-<h4>Operating System</h4>
-<p>
+<div class="input-group mb-3 launch_only">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Operating System</span>
+    </div>
     <select id="operating_system" class="control form-control">
         <option value="ubuntu-18-04">Ubuntu 18.04</option>
         <option value="ubuntu-16-04">Ubuntu 16.04</option>
@@ -201,53 +201,57 @@
         <option value="centos-7">CentOS 7</option>
         <option value="coreos-stable">CoreOS Stable</option>
     </select>
-</p>
 </div>
 
-<div class="launch_only">
-<h4>Networking</h4>
-<p>
+<div class="input-group mb-3 launch_only">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Networking</span>
+    </div>
     <select id="networking" class="control form-control">
         <option value="clearnet_native">One IPv4, IPv6 (typical)</option>
     </select>
-</p>
 </div>
 
-<h4>Days to live</h4>
-<h6>(Can be renewed.)</h6>
-<p>
-    <input id="days" type="number" value="7" min="1" max="28" class="control form-control">
-</p>
-
-<div class="launch_only">
-<h4>CPU Cores</h4>
-<p>
-    <input id="cores" type="number" value="1" min="1" max="32" class="control form-control">
-</p>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Days to live (Can be renewed.)</span>
+    </div>
+    <input id="days" type="number" value="7" min="1" max="28" size="2" class="control" oninput="document.getElementById('days_range').value = this.value">
+    <input id="days_range" type="range" step="1"  value="7" min="1" max="28" class="control form-control input-group-append" oninput="document.getElementById('days').value = this.value">
 </div>
 
-<div class="launch_only">
-<h4>Memory (GiB)</h4>
-<p>
-    <input id="memory" type="number" value="1" min="1" max="192" class="control form-control">
-</p>
+<div class="launch_only input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text">vCPU Cores</span>
+    </div>
+    <input id="cores" type="number" value="1" min="1" max="32" size="2" class="control" oninput="document.getElementById('cores_range').value = this.value">
+    <input id="cores_range" type="range" step="1"  value="1" min="1" max="32" class="control form-control input-group-append" oninput="document.getElementById('cores').value = this.value">
 </div>
 
-<div class="launch_only">
-<h4>Disk (GiB)</h4>
-<p>
-    <input id="disk" type="number" value="25" min="1" max="3840" class="control form-control">
-</p>
+<div class="launch_only input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Memory (GiB)</span>
+    </div>
+    <input id="memory" type="number" value="1" min="1" max="192" class="control" oninput="document.getElementById('memory_range').value = this.value">
+    <input id="memory_range" type="range" step="1"  value="1" min="1" max="192" class="control form-control input-group-append" oninput="document.getElementById('memory').value = this.value">
 </div>
 
-<div class="launch_only">
-<h4>SSH public key (~/.ssh/id_rsa.pub): paste or attach</h4>
-<p>
-    <code><textarea style="width: 100%" id="ssh_key" class="control form-control" placeholder="ssh-rsa..."></textarea></code>
-    <small>If attaching a key, the file's extension <strong>must</strong> be .pub</small>
-    <input class="control form-control-file" type="file" accept=".pub" onchange="key_attach(this.files)">
-</p>
+<div class="launch_only input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Disk (GiB)</span>
+    </div>
+    <input id="disk" type="number" value="25" min="1" max="3840" class="control" oninput="document.getElementById('disk_range').value = this.value">
+    <input id="disk_range" type="range" step="1"  value="25" min="1" max="3840" class="control form-control input-group-append" oninput="document.getElementById('disk').value = this.value">
 </div>
+
+<div class="launch_only input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text">SSH public key (~/.ssh/id_rsa.pub)</span>
+    </div>
+    <input type="text" id="ssh_key" class="control form-control" placeholder="ssh-rsa...">
+    <input class="control form-control-file border" type="file" accept=".pub" onchange="key_attach(this.files)">
+</div>
+
 
 <input id="launch_button" class="control form-control btn-primary" type="button" value="Launch" onclick='lock_out_controls(); this.value = "Processing...";  try_launch();'>
 

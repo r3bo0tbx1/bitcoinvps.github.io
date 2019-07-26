@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>VPS hosting for Bitcoin SV</title>
+  <title>VPS hosting for Bitcoin, Bitcoin Cash, Bitcoin SV</title>
   <meta charset="UTF-8">
-  <meta name="description" content="Launch VPS servers with Bitcoin SV">
+  <meta name="description" content="Launch VPS servers with Bitcoin, Bitcoin Cash, and Bitcoin SV">
   <meta name="keywords" content="Bitcoin, cryptocurrency, Bitcoin SV, vps, infrastructure, virtual private server">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -17,533 +17,53 @@
 
 <div class="container">
 <div class="jumbotron">
-<h1>VPS hosting for Bitcoin SV</h1>
-
-<p>Launch virtualized servers with Bitcoin SV right from your browser with <a href="https://www.moneybutton.com">MoneyButton</a></p>
+<h1>VPS hosting for Bitcoin, Bitcoin Cash, Bitcoin SV, and other cryptocurrencies</h1>
 </div>
 
-<h3>Pricing</h3>
+<h3>Hosts</h3>
 <table class="table table-striped">
 <tr>
-<th>Cores</th>
-<th>Memory (GiB)</th>
-<th>Disk (GiB)</th>
-<th>Bandwidth (TiB)</th>
-<th>Approximate price per 28 days (USD)</th>
+<th>Name</th>
+<th>Tor Hidden Service (.onion)</th>
+<th>API</th>
+<th>KYC</th>
+<th>Requires signup</th>
+<th>Currencies</th>
 </tr>
 
 <tr>
-<td>1</td>
-<td>1</td>
-<td>25</td>
-<td>1</td>
-<td>9.00</td>
+<td><a href="https://sporestack.com">SporeStack</a></td>
+<td><a href="http://spore64i5sofqlfz5gq2ju4msgzojjwifls7rok2cti624zyq3fcelad.onion/">SporeStack Hidden Service</a></td>
+<td>Yes</td>
+<td>No</td>
+<td>No signup or email required.</td>
+<td>Bitcoin, Bitcoin Cash, Bitcoin SV</td>
 </tr>
 
 <tr>
-<td>1</td>
-<td>2</td>
-<td>50</td>
-<td>2</td>
-<td>18.00</td>
+<td><a href="https://cockbox.org/?r=2632">Cock Box</a></td>
+<td>Unknown</td>
+<td>No</td>
+<td>No</td>
+<td>Email, but it doesn't have to be valid.</td>
+<td>Bitcoin, Monero</td>
 </tr>
 
 <tr>
-<td>1</td>
-<td>3</td>
-<td>60</td>
-<td>3</td>
-<td>27.00</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>2</td>
-<td>60</td>
-<td>3</td>
-<td>27.00</td>
-</tr>
-
-<tr>
-<td>3</td>
-<td>1</td>
-<td>60</td>
-<td>3</td>
-<td>27.00</td>
-</tr>
-
-<tr>
-<td>2</td>
-<td>4</td>
-<td>80</td>
-<td>4</td>
-<td>36.00</td>
-</tr>
-
-<tr>
-<td>4</td>
-<td>8</td>
-<td>160</td>
-<td>5</td>
-<td>72.00</td>
-</tr>
-
-<tr>
-<td>6</td>
-<td>16</td>
-<td>320</td>
-<td>6</td>
-<td>144.00</td>
-</tr>
-
-<tr>
-<td>8</td>
-<td>32</td>
-<td>640</td>
-<td>7</td>
-<td>288.01</td>
-</tr>
-
-<tr>
-<td>12</td>
-<td>48</td>
-<td>960</td>
-<td>8</td>
-<td>432.00</td>
-</tr>
-
-<tr>
-<td>16</td>
-<td>64</td>
-<td>1280</td>
-<td>9</td>
-<td>576.00</td>
-</tr>
-
-<tr>
-<td>20</td>
-<td>96</td>
-<td>1920</td>
-<td>10</td>
-<td>864.01</td>
-</tr>
-
-<tr>
-<td>24</td>
-<td>128</td>
-<td>2560</td>
-<td>11</td>
-<td>1152.00</td>
-</tr>
-
-<tr>
-<td>32</td>
-<td>192</td>
-<td>3840</td>
-<td>12</td>
-<td>1728.00</td>
+<td><a href="https://www.vultr.com/?ref=8116035-4F">Vultr</a></td>
+<td>None</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Email and credit card required.</td>
+<td>Bitcoin, Bitcoin Cash</td>
 </tr>
 
 </table>
-
-
-<h3>Launch a server</h3>
-<div class="card card-body">
-
-<!-- This launcher is released into the public domain under the UNLICENSE -->
-
-
-<script src="/static/sporestack.js"></script>
-<script src="/static/bitcoin.js"></script>
-
-<script src="https://www.moneybutton.com/moneybutton.js"></script>
-
-
-<noscript><h2>This needs Javascript to work.</h2></noscript>
-
-<div class="input-group mb-3 launch_only">
-    <div class="input-group-prepend">
-        <span class="input-group-text">Provider</span>
-    </div>
-    <select id="host" class="control form-control" onchange="host_onchange();">
-        <option value="auto">Random with capacity</option>
-        <option value="digitalocean.sporestack.com">Digital Ocean</option>
-    </select>
-</div>
-
-<div class="input-group mb-3 launch_only">
-    <div class="input-group-prepend">
-        <span class="input-group-text">Region (Provider must not be random to adjust this.)</span>
-    </div>
-    <select id="region" class="control form-control" disabled>
-        <option value="auto">Random with capacity</option>
-        <option value="sfo2">San Francisco</option>
-        <option value="nyc1">New York City 1</option>
-        <option value="nyc3">New York City 3</option>
-        <option value="tor1">Toronto</option>
-        <option value="lon1">London</option>
-        <option value="ams3">Amsterdam</option>
-        <option value="fra1">Frankfurt</option>
-        <option value="sgp1">Singapore</option>
-        <option value="blr1">Bangalore</option>
-    </select>
-</div>
-
-<div class="input-group mb-3 launch_only">
-    <div class="input-group-prepend">
-        <span class="input-group-text">Operating System</span>
-    </div>
-    <select id="operating_system" class="control form-control">
-        <option value="ubuntu-18-04">Ubuntu 18.04</option>
-        <option value="ubuntu-16-04">Ubuntu 16.04</option>
-        <option value="debian-10">Debian 10</option>
-        <option value="debian-9">Debian 9</option>
-        <option value="fedora-28">Fedora 28</option>
-        <option value="freebsd-12">FreeBSD 12</option>
-        <option value="freebsd-11">FreeBSD 11</option>
-        <option value="centos-7">CentOS 7</option>
-        <option value="coreos-stable">CoreOS Stable</option>
-    </select>
-</div>
-
-<div class="input-group mb-3 launch_only">
-    <div class="input-group-prepend">
-        <span class="input-group-text">Networking</span>
-    </div>
-    <select id="networking" class="control form-control">
-        <option value="clearnet_native">One IPv4, IPv6 (typical)</option>
-    </select>
-</div>
-
-<div class="input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text">Days to live (Can be renewed.)</span>
-    </div>
-    <input id="days" type="number" value="7" min="1" max="28" size="2" class="control" oninput="document.getElementById('days_range').value = this.value">
-    <input id="days_range" type="range" step="1"  value="7" min="1" max="28" class="control form-control input-group-append" oninput="document.getElementById('days').value = this.value">
-</div>
-
-<div class="launch_only input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text">vCPU Cores</span>
-    </div>
-    <input id="cores" type="number" value="1" min="1" max="32" size="2" class="control" oninput="document.getElementById('cores_range').value = this.value">
-    <input id="cores_range" type="range" step="1"  value="1" min="1" max="32" class="control form-control input-group-append" oninput="document.getElementById('cores').value = this.value">
-</div>
-
-<div class="launch_only input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text">Memory (GiB)</span>
-    </div>
-    <input id="memory" type="number" value="1" min="1" max="192" class="control" oninput="document.getElementById('memory_range').value = this.value">
-    <input id="memory_range" type="range" step="1"  value="1" min="1" max="192" class="control form-control input-group-append" oninput="document.getElementById('memory').value = this.value">
-</div>
-
-<div class="launch_only input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text">Disk (GiB)</span>
-    </div>
-    <input id="disk" type="number" value="25" min="1" max="3840" class="control" oninput="document.getElementById('disk_range').value = this.value">
-    <input id="disk_range" type="range" step="1"  value="25" min="1" max="3840" class="control form-control input-group-append" oninput="document.getElementById('disk').value = this.value">
-</div>
-
-<div class="launch_only input-group mb-3">
-    <div class="input-group-prepend">
-        <span class="input-group-text">SSH public key (~/.ssh/id_rsa.pub)</span>
-    </div>
-    <input type="text" id="ssh_key" class="control form-control" placeholder="ssh-rsa...">
-    <input class="control form-control-file border" type="file" accept=".pub" onchange="key_attach(this.files)">
-</div>
-
-
-<input id="launch_button" class="control form-control btn-primary" type="button" value="Launch" onclick='lock_out_controls(); this.value = "Processing...";  try_launch();'>
-
-<p>
-<div id="payment"></div>
-</p>
-
-<div id="info"></div>
-<div id="output"></div>
-<b>
-<div id="error"></div>
-</b>
-
-<div id="existing_servers"></div>
-
-<script>
-
-function key_attach(files) {
-    var reader = new FileReader();
-    var element = document.getElementById("ssh_key");
-    reader.onload = function() {
-        element.value = reader.result;
-        element.disabled = true;
-    }
-    reader.readAsText(files[0]);
-}
-
-
-function host_onchange() {
-    console.log("changes");
-    var element = document.getElementById("host");
-    if (element.value === "auto" ) {
-        var region_element = document.getElementById("region");
-        region_element.value = "auto";
-        disable_by_id("region");
-    } else if (element.value === "digitalocean.sporestack.com") {
-        disable_by_id("region", status=false);
-    } else {
-        disable_by_id("region");
-        console.log("BUG");
-    }
-}
-
-/* In case value is cached on page reload. */
-host_onchange();
-
-function disable_by_id(id, status = true) {
-    var element = document.getElementById(id);
-    element.disabled = status;
-}
-
-function lock_out_controls(status = true) {
-    var items = document.getElementsByClassName("control");
-    Array.from(items).forEach((id) => {
-        id.disabled = status;
-    } );
-    blank_by_id("payment");
-}
-
-function renew_enable(machine_id) {
-    var items = document.getElementsByClassName("launch_only");
-    Array.from(items).forEach((id) => {
-        id.style = "display:none";
-    } );
-    var launch_button = document.getElementById("launch_button");
-    launch_button.value = "Renew";
-    launch_button.onclick = function() { lock_out_controls(); this.value = "Processing..."; renew_wrapper(machine_id); };
-}
-
-function renew_wrapper(machine_id) {
-    lock_out_controls();
-    try_renew(machine_id);
-}
-
-function pay(address, amount) {
-    console.log("pay");
-
-    // Satoshis to BSV
-    var btc = sb.toBitcoin(amount);
-
-    // Satoshis to BSV, affiliate 1% fee
-    var btc_affiliate = sb.toBitcoin(Math.floor(amount * 0.01));
-
-    pay_loop = true;
-
-    const payment_element = document.getElementById("payment");
-    moneyButton.render(payment_element, {
-      outputs: [
-                 { address: "1kiawHJA9ewNWwsi4i9WVEmQpcGKZDG6v",
-                   amount: btc_affiliate,
-                   currency: "BSV"
-                 },
-                 { address: address,
-                   amount: btc,
-                   currency: "BSV"
-                 }
-      ],
-      clientIdentifier: "fbdb1e8ba76b9b0064b89a9c9d34fe86",
-      buttonId: "1560812643219",
-      buttonData: "{}",
-      type: "buy",
-      onPayment: function (arg) { console.log('paid'); var launchbtn = document.getElementById("launch_button"); launchbtn.disabled = false; launchbtn.click(); console.log('more paid') },
-      onError: function (arg) { console.log('onError', arg) }
-  })
-}
-
-var pay_loop = false;
-var launch_host = null;
-function launch_callback(response) {
-    // FIXME
-    console.log(JSON.stringify(response));
-    launch_host = response["host"];
-    if (response["created"] === true) {
-
-        var path_name = "SporeStack_" + response["machine_id"]
-        var json_response = JSON.stringify(response);
-        window.localStorage.setItem(path_name, json_response);
-
-        set_value("launch_button", "Server built.");
-        set_contents("info", get_info_html(response));
-        set_contents("output", "<h4>Save this output:</h4><tt><textarea class='form-control'>" + json_response + "</textarea></tt>")
-
-    } else if (response["paid"] === true) {
-
-        set_value("launch_button", "Payment received. Building...");
-        setTimeout(function () { try_launch(); }, 5000);
-
-    } else if (response["paid"] === false) {
-
-        if (pay_loop === true) {
-            setTimeout(function () { try_launch(); }, 5000);
-        } else {
-            pay(response.payment.address, response.payment.amount);
-        }
-
-    }
-}
-
-function renew_callback(response) {
-    if (response["paid"] === true) {
-        set_value("launch_button", "Renewed.");
-        var path_name = "SporeStack_" + response["machine_id"];
-        var server = JSON.parse(window.localStorage[path_name]);
-        server["expiration"] = response["expiration"];
-        var json_response = JSON.stringify(server);
-        window.localStorage.setItem(path_name, json_response);
-        list_servers();
-    } else if (response["paid"] === false) {
-        if (pay_loop === true) {
-            setTimeout(function () { try_renew(response["machine_id"]); }, 5000);
-        } else {
-            pay(response.payment.address, response.payment.amount);
-        }
-    } else {
-        console.log("bug");
-    }
-}
-
-function blank_by_id(id) {
-    var element = document.getElementById(id);
-    element.innerHTML = "";
-}
-
-function hide_by_id(id) {
-    var element = document.getElementById(id);
-    element.style = "display:none";
-}
-
-function epoch_to_date(epoch) {
-    var date = new Date(0);
-    date.setUTCSeconds(epoch);
-    return date;
-}
-
-function get_info_html(response) {
-    var expiration = "<li>Expiration: " + epoch_to_date(response["expiration"])
-    var epoch = Date.now() / 1000 | 0;
-    if (response["expiration"] >= epoch) {
-        expiration = expiration + " <input type='button' class='btn btn-primary' onclick='renew_enable(\"" + response["machine_id"] + "\")' value='Renew'>"
-    } else {
-        expiration = expiration + " <b>(Expired)</b>"
-    }
-    expiration = expiration + "</li>"
-    return "<ul><li>Machine ID <b>(this needs to be kept secret)</b>: " + response["machine_id"] + "</li>" + expiration + "<li>IPv4: " + response["network_interfaces"][0]["ipv4"] + "</li><li>IPv6: " + response["network_interfaces"][0]["ipv6"] + "</li><li>Raw: <tt><textarea class='form-control'>" + JSON.stringify(response) + "</textarea></tt></li></ul>";
-}
-
-function set_contents(id, value) {
-    var element = document.getElementById(id);
-    element.innerHTML = value;
-}
-
-function set_value(id, value) {
-    var element = document.getElementById(id);
-    element.value = value;
-}
-
-
-function list_servers() {
-    var servers = [];
-    for (var item in window.localStorage) {
-        if (item.startsWith("SporeStack_")) {
-            servers.push(item)
-        }
-    }
-    
-    if (servers.length > 0) {
-        var existing_server_contents = "<h4>You already have these servers:</h4>";
-        servers.forEach ( function(value) {
-            existing_server_contents = existing_server_contents + get_info_html(JSON.parse(window.localStorage[value]));
-        } );
-        set_contents("existing_servers", existing_server_contents);
-    }
-}
-
-list_servers();
-
-launch_button_text = "Launch";
-
-function error_callback(response) {
-    set_contents("error", response);
-    lock_out_controls(false);
-    set_value("launch_button", launch_button_text);
-}
-
-function try_renew(machine_id) {
-    var path_name = "SporeStack_" + machine_id;
-    server = JSON.parse(window.localStorage[path_name]);
-    host = server["host"];
-    currency = "bsv";
-    days = parseInt(document.getElementById("days").value, 10);
-    options = {"days": days,
-               "currency": currency,
-               "machine_id": machine_id,
-               "host": host}
-    launch_button_text = "Renew";
-    output = topup(renew_callback, error_callback, options);
-}
-
-function try_launch() {
-    blank_by_id("error");
-    if (typeof(machine_id) === 'undefined')
-        machine_id = random_machine_id();
-
-    currency = "bsv";
-    days = parseInt(document.getElementById("days").value, 10);
-    operating_system = document.getElementById("operating_system").value;
-    ssh_key = document.getElementById("ssh_key").value;
-    cores = parseInt(document.getElementById("cores").value, 10);
-    memory = parseInt(document.getElementById("memory").value, 10);
-    disk = parseInt(document.getElementById("disk").value, 10);
-
-    region = document.getElementById("region").value;
-    if (region === "auto")
-        region = null;
-
-    host = document.getElementById("host").value;
-    if (host === "auto")
-        host = null;
-
-    options = {"host": host,
-               "region": region,
-               "days": days,
-               "machine_id": machine_id,
-               "want_topup": true,
-               "currency": currency,
-               "cores": cores,
-               "memory": memory,
-               "disk": disk,
-               "ssh_key": ssh_key,
-               "host": launch_host,
-               "operating_system": operating_system};
-    // FIXME
-    console.log(JSON.stringify(options));
-    output = launch(launch_callback, error_callback, options);
-}
-</script>
-
-</div>
-
-<br/>
 
 <div class="card card-body">
     <div id="bitsqus" data-address="1M4sbJFWwZnbbjXkVoxjGj946qCh7kxcb8" data-currency="USD" data-amount="0.08"></div>
     <script src="https://bico.media/d31553b920a27a34c6c3f429db8a15f2c2ede39aa35038533072cedb3378ba52" integrity="sha384-EYAu2kqWpYUXh+hQaHzEq9h9MRSn8tDwlWPjEE2HNcasbFCZmzw8KtKNuTZYvGJT" crossorigin="anonymous"></script>
 </div>
-
-<br/>
-
-<footer>VPS servers hosted with <a href="https://sporestack.com">SporeStack</a>. Head over there if you want to use additional cryptocurrencies, libraries, CLI, etc.</footer>
 
 </div>
 </body>
